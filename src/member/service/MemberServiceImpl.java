@@ -63,9 +63,8 @@ public class MemberServiceImpl implements MemberService {
 	
 		if (result1 == 0) {
 			if(result ==1) {
-		
 				msg = "아이디가 등록되었습니다";
-				//cancelFunc();
+				cancelFunc();
 			}else {
 				msg = "아이디 등록을 실패하였습니다.";
 			}

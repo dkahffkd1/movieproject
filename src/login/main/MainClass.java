@@ -1,6 +1,7 @@
 package login.main;
 
 
+import java.io.File;
 import java.net.URL;
 import java.nio.file.Paths;
 
@@ -17,6 +18,7 @@ public class MainClass extends Application{
 	public void start(Stage arg0) throws Exception {
 
 		URL url = new URL("file:/"+(Paths.get("").toAbsolutePath().toString())+"/bin/login/fxml/LoginFx.fxml");
+		
 		FXMLLoader loader = new FXMLLoader(url);
 		
 		Parent root = loader.load();
@@ -25,8 +27,9 @@ public class MainClass extends Application{
 		
 		LoginController ctrl = loader.getController();
 		
-		ctrl.setRoot(root);
 		
+		
+		ctrl.setRoot(root);
 		arg0.setScene(scene);
 		
 		arg0.show();

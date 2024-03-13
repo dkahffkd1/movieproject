@@ -7,10 +7,13 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import login.dao.LoginDAO;
 import login.dto.LoginDTO;
+import longin.idfind.LoginIdfind;
+import longin.idfind.LoginPwdfind;
 import member.dto.MemberDTO;
 import member.main.MemberMain;
 
 public class LoginServiceImpl implements LoginService{
+	Parent root;
 	private LoginDAO dao;
 	public LoginServiceImpl() {
 		dao = new LoginDAO();
@@ -42,20 +45,28 @@ public class LoginServiceImpl implements LoginService{
 		}
 		CommonService.myAlert(msg);
 	}
-
 	public void registerFunc(Parent root) {
 		MemberMain member = new MemberMain();
 		member.viewFx(root);
 	}
-	public void registerFunc() {
-		MemberMain member = new MemberMain();
-		member.viewFx();
-	}
 	public void idfindFunc(Parent root) {
-
+		LoginIdfind find = new LoginIdfind();
+		find.idFindFx(root);
 	}
 	public void pwdfincFunc(Parent root) {
+		
+	}
 
+	public void btnPwd(Parent root) {
+
+	}
+	public void btnFind(Parent root) {
+		
+	}
+
+	public void pwdfindFunc(Parent root) {
+		LoginPwdfind pwd = new LoginPwdfind();
+		pwd.findPwdFx(root);
 	}
 
 }

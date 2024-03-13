@@ -3,6 +3,7 @@ package member.controller;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import common.CommonService;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
@@ -16,8 +17,6 @@ public class MemberController implements Initializable {
 	@FXML public PasswordField fxPwd, fxPwdChk;
 	Parent root;
 	MemberService ms;
-	
-	
 
 	public void setRoot(Parent root) {
 		ms.setRoot(root);
@@ -28,15 +27,27 @@ public class MemberController implements Initializable {
 	}
 
 	public void btnEnterFunc() {
-		ms.btnEnterFunc();
-	}
+		ms.PwdChk(fxPwd.getText(),fxPwdChk.getText());
+		int result = ms.pwdsame();
+		if(result == 0) {
+			CommonService.myAlert("비밀번호가 일치합니다.");
+		
+		}else {
+			CommonService.myAlert("비밀번호가 일치하지 않습니다.");
+		}
+		ms.btnEnterFunc(result);
+	}	
 	public void btnCancelFunc() {
 		ms.btnCancelFunc();
 	}
 	public void IdChk() {
-		
 		ms.IdChk(fxId.getText());
+		int result = ms.same();
+		if (result == 0) {
+			CommonService.myAlert("중복");
+		}else {
+			CommonService.myAlert("가능");
+		}
 	}
-
 }
 

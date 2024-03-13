@@ -4,6 +4,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+
+import common.CommonService;
 import login.dto.LoginDTO;
 
 public class LoginDAO {
@@ -26,12 +29,10 @@ public class LoginDAO {
 		}
 	}
 	public LoginDTO getUser(String id) {
+		String sql = "select * from login_fx where id ='" + id+ "'";
 		LoginDTO dto = null;
-		System.out.println("id : " +id);
-		String sql = "select * from login_fx where id = ?";
-		try {
+			try {
 			ps=con.prepareStatement(sql);
-			ps.setString(1, id);
 			rs=ps.executeQuery();
 			if(rs.next()) {
 				dto = new LoginDTO(rs.getString("id"), rs.getString("pwd"), rs.getString("name"));
@@ -40,5 +41,19 @@ public class LoginDAO {
 			e.printStackTrace();
 		}
 		return dto;
+	}
+	public int delete(String delId) {
+		
+		String sql = "delete from login_fx where id ='"+delId+"'";
+		int result = 0; 
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, sql);
+			result = ps.executeUpdate();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
 	}
 }

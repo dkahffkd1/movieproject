@@ -42,22 +42,24 @@ public class MemberDAO {
 		}
 		return result;
 	}
+	ArrayList<MemberDTO> arr = new ArrayList<>();
 	public ArrayList<MemberDTO> getMembers(){
 		String sql = "select * from login_fx";
-		ArrayList<MemberDTO> mem = new ArrayList<>();
+		MemberDTO dto;
 		try {
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
 			while(rs.next()) {
-				MemberDTO dto = new MemberDTO();
-				dto.setId(rs.getString("fxId"));
-				dto.setPwd(rs.getString("fxPwd"));
-				dto.setName(rs.getString("fxName"));
-				mem.add(dto);
+				dto = new MemberDTO();
+				dto.setId(rs.getString("id"));
+				dto.setPwd(rs.getString("pwd"));
+				dto.setName(rs.getString("name"));
+				arr.add(dto);
+				System.out.println(arr.get(0).getId());
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return mem;
+		return arr;
 	}
 }

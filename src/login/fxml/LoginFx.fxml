@@ -5,12 +5,12 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="625.0" prefWidth="739.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="login.controller.LoginController">
+<AnchorPane prefHeight="625.0" prefWidth="739.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.controller.LoginController">
    <children>
       <Button layoutX="298.0" layoutY="373.0" mnemonicParsing="false" onAction="#idfindFunc" text="아이디 찾기" />
       <Button layoutX="407.0" layoutY="373.0" mnemonicParsing="false" onAction="#pwdfindFunc" text="비밀번호 찾기" />
@@ -27,8 +27,17 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <ImageView fitHeight="150.0" fitWidth="377.0" layoutX="167.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true" />
       <CheckBox fx:id="ChkId" layoutX="195.0" layoutY="345.0" mnemonicParsing="false" text="아이디 저장" />
       <PasswordField fx:id="fxPwd" layoutX="232.0" layoutY="308.0" prefHeight="22.0" prefWidth="183.0" promptText="비밀번호 입력" />
+      <ImageView fx:id="imageView" fitHeight="258.0" fitWidth="739.0" layoutY="2.0" opacity="0.88" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="@../../image.jpeg" />
+         </image>
+      </ImageView>
+      <Label layoutX="264.0" layoutY="103.0" text="영화~~~~~">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

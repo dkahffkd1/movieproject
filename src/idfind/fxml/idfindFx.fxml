@@ -6,16 +6,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="171.0" prefWidth="500.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="idfind.controller.IdfindController">
+<AnchorPane prefHeight="171.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="idfind.controller.IdfindController">
    <children>
       <TextField fx:id="idFind" layoutX="151.0" layoutY="93.0" />
-      <Label layoutX="79.0" layoutY="97.0" text="아이디" />
+      <Label layoutX="79.0" layoutY="97.0" text="이메일 입력" />
       <Label layoutX="157.0" layoutY="14.0" prefHeight="44.0" prefWidth="161.0" text="아이디 찾기">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
       <Button layoutX="335.0" layoutY="93.0" mnemonicParsing="false" onAction="#btnFind" prefHeight="22.0" prefWidth="109.0" text="찾기" />
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#btnBack" prefHeight="22.0" prefWidth="40.0" text="←" />
    </children>
 </AnchorPane>

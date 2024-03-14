@@ -8,33 +8,84 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="625.0" prefWidth="739.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.controller.LoginController">
+<AnchorPane prefHeight="413.0" prefWidth="537.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="login.controller.LoginController">
    <children>
-      <Button layoutX="298.0" layoutY="373.0" mnemonicParsing="false" onAction="#idfindFunc" text="아이디 찾기" />
-      <Button layoutX="407.0" layoutY="373.0" mnemonicParsing="false" onAction="#pwdfindFunc" text="비밀번호 찾기" />
-      <Button layoutX="191.0" layoutY="373.0" mnemonicParsing="false" onAction="#registerFunc" text="회원 가입" />
-      <Button layoutX="440.0" layoutY="265.0" mnemonicParsing="false" onAction="#loginFunc" prefHeight="59.0" prefWidth="92.0" text="로그인" />
-      <TextField fx:id="fxId" layoutX="232.0" layoutY="265.0" prefHeight="22.0" prefWidth="183.0" promptText="아이디 입력" />
-      <Label layoutX="173.0" layoutY="269.0" text="아이디">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="167.0" layoutY="310.0" text="비밀번호">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <CheckBox fx:id="ChkId" layoutX="195.0" layoutY="345.0" mnemonicParsing="false" text="아이디 저장" />
-      <PasswordField fx:id="fxPwd" layoutX="232.0" layoutY="308.0" prefHeight="22.0" prefWidth="183.0" promptText="비밀번호 입력" />
-      <ImageView fx:id="imageView" fitHeight="258.0" fitWidth="739.0" layoutY="2.0" opacity="0.88" pickOnBounds="true" smooth="false">
+      <ImageView fitHeight="413.0" fitWidth="537.0" pickOnBounds="true">
          <image>
-            <Image url="@../../image.jpeg" />
+            <Image url="@../../movieimage.png" />
          </image>
       </ImageView>
-      <Label layoutX="264.0" layoutY="103.0" text="영화~~~~~">
+      <Button layoutX="250.0" layoutY="247.0" mnemonicParsing="false" onAction="#idfindFunc" text="아이디 찾기" />
+      <Button layoutX="356.0" layoutY="247.0" mnemonicParsing="false" onAction="#pwdfindFunc" text="비밀번호 찾기" />
+      <Button layoutX="153.0" layoutY="247.0" mnemonicParsing="false" onAction="#registerFunc" text="회원 가입" />
+      <Button layoutX="375.0" layoutY="125.0" mnemonicParsing="false" onAction="#loginFunc" prefHeight="59.0" prefWidth="92.0" text="로그인" />
+      <TextField fx:id="fxId" layoutX="173.0" layoutY="125.0" prefHeight="22.0" prefWidth="183.0" promptText="아이디 입력" />
+      <Label layoutX="104.0" layoutY="127.0" text="아이디">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="0.014218009478673022" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="97.0" layoutY="168.0" text="비밀번호">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="0.014218009478673022" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <CheckBox fx:id="ChkId" layoutX="131.0" layoutY="210.0" mnemonicParsing="false" text="아이디 저장">
+         <textFill>
+            <LinearGradient endX="1.0" endY="0.014218009478673022" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill></CheckBox>
+      <PasswordField fx:id="fxPwd" layoutX="173.0" layoutY="166.0" prefHeight="22.0" prefWidth="183.0" promptText="비밀번호 입력" />
+      <Label alignment="CENTER" layoutX="45.0" layoutY="6.0" prefHeight="102.0" prefWidth="474.0" text="Movice Cinema" textFill="#ff0b0b">
          <font>
             <Font size="48.0" />
          </font>

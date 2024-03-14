@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="733.0" prefWidth="881.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="member.controller.MemberController">
+<AnchorPane prefHeight="589.0" prefWidth="833.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="member.controller.MemberController">
    <children>
       <Label alignment="CENTER" layoutX="250.0" layoutY="49.0" prefHeight="49.0" prefWidth="341.0" text="회원가입">
          <font>
@@ -40,37 +40,39 @@
                         <Insets />
                      </VBox.margin>
                   </Label>
+                  <Label alignment="TOP_LEFT" graphicTextGap="5.0" lineSpacing="30.0" prefHeight="27.0" prefWidth="127.0" text="이메일">
+                     <padding>
+                        <Insets top="40.0" />
+                     </padding>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="40.0" />
+                     </VBox.margin>
+                  </Label>
                   <Label alignment="TOP_LEFT" contentDisplay="CENTER" graphicTextGap="10.0" lineSpacing="30.0" prefHeight="19.0" prefWidth="117.0" text="아이디">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
-                     <padding>
-                        <Insets top="40.0" />
-                     </padding>
                      <VBox.margin>
-                        <Insets />
+                        <Insets bottom="40.0" />
                      </VBox.margin>
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
                   <Label alignment="TOP_LEFT" contentDisplay="CENTER" prefHeight="0.0" prefWidth="110.0" text="비밀번호">
-                     <padding>
-                        <Insets top="40.0" />
-                     </padding>
                      <VBox.margin>
-                        <Insets />
+                        <Insets bottom="40.0" />
                      </VBox.margin>
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
                   <Label alignment="TOP_LEFT" graphicTextGap="5.0" lineSpacing="30.0" prefHeight="27.0" prefWidth="127.0" text="비밀번호 확인">
-                     <padding>
-                        <Insets top="40.0" />
-                     </padding>
                      <VBox.margin>
-                        <Insets bottom="70.0" />
+                        <Insets bottom="40.0" />
                      </VBox.margin>
                      <font>
                         <Font size="18.0" />
@@ -86,6 +88,11 @@
                         <Insets bottom="40.0" />
                      </VBox.margin>
                   </TextField>
+                  <TextField fx:id="fxEmail" alignment="CENTER">
+                     <VBox.margin>
+                        <Insets bottom="45.0" />
+                     </VBox.margin>
+                  </TextField>
                   <TextField fx:id="fxId" alignment="CENTER">
                      <VBox.margin>
                         <Insets bottom="40.0" />
@@ -98,7 +105,7 @@
                   </PasswordField>
                   <PasswordField fx:id="fxPwdChk">
                      <VBox.margin>
-                        <Insets bottom="70.0" />
+                        <Insets bottom="40.0" />
                      </VBox.margin>
                   </PasswordField>
                   <Button mnemonicParsing="false" onAction="#btnCancelFunc" prefHeight="49.0" prefWidth="153.0" text="나가기">
@@ -110,6 +117,7 @@
             </VBox>
          </children>
       </GridPane>
-      <Button layoutX="722.0" layoutY="172.0" mnemonicParsing="false" onAction="#IdChk" prefHeight="23.0" prefWidth="127.0" text="아이디 중복 체크" />
+      <Button layoutX="722.0" layoutY="239.0" mnemonicParsing="false" onAction="#IdChk" prefHeight="23.0" prefWidth="127.0" text="아이디 중복 체크" />
+      <Button layoutX="50.0" layoutY="14.0" mnemonicParsing="false" onAction="#back" prefHeight="23.0" prefWidth="51.0" text="←" />
    </children>
 </AnchorPane>

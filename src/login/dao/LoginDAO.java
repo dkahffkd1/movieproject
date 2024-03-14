@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import common.CommonService;
 import login.dto.LoginDTO;
+import member.dto.MemberDTO;
 
 public class LoginDAO {
 	private Connection con;
@@ -28,32 +29,20 @@ public class LoginDAO {
 			e.printStackTrace();
 		}
 	}
-	public LoginDTO getUser(String id) {
-		String sql = "select * from login_fx where id ='" + id+ "'";
+	public LoginDTO getUser(String userId) {
+		String sql = "select * from login_fx where id ='" + userId+ "'";
 		LoginDTO dto = null;
 			try {
 			ps=con.prepareStatement(sql);
 			rs=ps.executeQuery();
 			if(rs.next()) {
-				dto = new LoginDTO(rs.getString("id"), rs.getString("pwd"), rs.getString("name"));
+				dto = new LoginDTO(rs.getString("id"),rs.getString("pwd"),rs.getString("name"));
+
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return dto;
 	}
-	public int delete(String delId) {
-		
-		String sql = "delete from login_fx where id ='"+delId+"'";
-		int result = 0; 
-		try {
-			ps = con.prepareStatement(sql);
-			ps.setString(1, sql);
-			result = ps.executeUpdate();
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return result;
-	}
+
 }

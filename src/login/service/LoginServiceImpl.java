@@ -57,16 +57,26 @@ public class LoginServiceImpl implements LoginService{
 		
 	}
 
-	public void btnPwd(Parent root) {
-
-	}
-	public void btnFind(Parent root) {
-		
-	}
-
 	public void pwdfindFunc(Parent root) {
 		LoginPwdfind pwd = new LoginPwdfind();
 		pwd.findPwdFx(root);
+	}
+
+	public void btnFind(String idf) {
+		
+	}
+
+	public String idid() {
+		return "b";
+	}
+
+	public void btnPwd(String pwd) {
+		
+	}
+
+	@Override
+	public String btnfind() {
+		return "a";
 	}
 
 }

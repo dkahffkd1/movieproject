@@ -14,10 +14,22 @@ public class LoginPwdfinImpl implements LoginService {
 	public void idfindFunc(Parent root) {
 	}
 	public void pwdfindFunc(Parent root) {
+		
 	}
 	public void btnFind(Parent root) {
 	}
-	public void btnPwd(Parent root) {
+
+	public void btnFind(String idf) {
+		
+	}
+	public String idid() {
+		return "b";
+	}
+	public void btnPwd(String pwd) {
+		
+	}
+	public String btnfind() {
+		return "a";
 	}
 
 }

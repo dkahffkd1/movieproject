@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import login.main.MainClass2;
 import member.service.MemberService;
 import member.service.MemberServiceImpl;
 
@@ -48,6 +49,10 @@ public class MemberController implements Initializable {
 		}else {
 			CommonService.myAlert("가능");
 		}
+	}
+	public void back() {
+		MainClass2 mc = new MainClass2();
+		mc.viewFx(root);
 	}
 }
 

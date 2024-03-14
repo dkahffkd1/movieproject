@@ -2,7 +2,7 @@ package member.dto;
 
 public class MemberDTO {
 	
-	private String id,pwd,name;
+	private String id,pwd,name,email;
 
 	public String getId() {
 		return id;
@@ -10,6 +10,14 @@ public class MemberDTO {
 
 	public void setId(String id) {
 		this.id = id;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getPwd() {

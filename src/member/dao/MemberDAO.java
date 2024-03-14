@@ -28,13 +28,14 @@ public class MemberDAO {
 	}
 	public int register(MemberDTO dto) {
 		int result = 0;
-		String sql = "insert into login_fx(id,pwd,name)"+"values(?,?,?)";
+		String sql = "insert into login_fx(id,email,pwd,name)"+"values(?,?,?,?)";
 		try {
 			ps = con.prepareStatement(sql);
 			
 			ps.setString(1, dto.getId());
-			ps.setString(2, dto.getPwd());
-			ps.setString(3, dto.getName());
+			ps.setString(2, dto.getEmail());
+			ps.setString(3, dto.getPwd());
+			ps.setString(4, dto.getName());
 			
 			result = ps.executeUpdate();
 		} catch(Exception e){
@@ -52,8 +53,10 @@ public class MemberDAO {
 			while(rs.next()) {
 				dto = new MemberDTO();
 				dto.setId(rs.getString("id"));
+				dto.setEmail(rs.getString("email"));
 				dto.setPwd(rs.getString("pwd"));
 				dto.setName(rs.getString("name"));
+
 				arr.add(dto);
 				System.out.println(arr.get(0).getId());
 			}
@@ -61,5 +64,19 @@ public class MemberDAO {
 			e.printStackTrace();
 		}
 		return arr;
+	}
+	public int delete(String delId) {
+		
+		String sql = "delete from login_fx where id ='"+delId+"'";
+		int result = 0;
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, sql);
+			rs= ps.executeQuery();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
 	}
 }

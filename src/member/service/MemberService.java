@@ -10,4 +10,5 @@ public interface MemberService {
 	public int same();
 	public void PwdChk(String pwd, String pwdchk);
 	public int pwdsame();
+
 }

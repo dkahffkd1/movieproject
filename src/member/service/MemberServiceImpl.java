@@ -14,7 +14,7 @@ import member.dto.MemberDTO;
 
 public class MemberServiceImpl implements MemberService {
 	Parent root;
-	TextField fxId,fxName,fxEmail;
+	TextField fxId,fxName, fxEmail;
 	PasswordField fxPwd, fxPwdChk;
 	MemberDAO dao;
 	ArrayList<MemberDTO> arr;
@@ -28,13 +28,14 @@ public class MemberServiceImpl implements MemberService {
 		this.root = root;
 	}
 	public void btnEnterFunc(int result1) {
-		
+
 		dao = new MemberDAO();
-		
+
 		fxId = (TextField)root.lookup("#fxId");
 		fxName = (TextField)root.lookup("#fxName");
 		fxPwd = (PasswordField)root.lookup("#fxPwd");
 		fxPwdChk = (PasswordField)root.lookup("#fxPwdChk");
+		fxEmail = (TextField)root.lookup("#fxEmail");
 
 		String name = null;
 		String id = null; 
@@ -44,6 +45,10 @@ public class MemberServiceImpl implements MemberService {
 			name = "이름을 입력하세요";
 			fxName.requestFocus();
 			CommonService.myAlert(name);
+		}else if(fxEmail.getText().isEmpty()) {
+			fxEmail.requestFocus();
+			CommonService.myAlert("이메일을 입력하세요");
+
 		}else if(fxId.getText().isEmpty()) {
 			id = "아이디를 입력하세요";
 			fxId.requestFocus();
@@ -55,12 +60,13 @@ public class MemberServiceImpl implements MemberService {
 		}
 		MemberDTO dto = new MemberDTO();
 		dto.setName(fxName.getText());
+		dto.setEmail(fxEmail.getText());
 		dto.setId(fxId.getText());
 		dto.setPwd(fxPwd.getText());
-		 
+
 		int result = dao.register(dto);
 		String msg = null;
-	
+
 		if (result1 == 0) {
 			if(result ==1) {
 				msg = "아이디가 등록되었습니다";
@@ -85,34 +91,32 @@ public class MemberServiceImpl implements MemberService {
 		this.fxid2 = fxid;
 	}
 	public int same() {
-		int result = 0;
+		int result;
 		arr = dao.getMembers();
 		for (int i = 0; i < arr.size(); i++) {
 			if (fxid2.equals(arr.get(i).getId())) {
 				System.out.println("중복");
-				result = 1;
+				return 0;
 			}else {
 				System.out.println("중복아님");
-				result = 0;
+
 			} 
 		}
-		return result;
+		return 1;
 	}
 	public void PwdChk(String pwd, String pwdchk) {
 		this.pwd2 = pwd;
 		this.pwdchk2 = pwdchk;
-				
+
 	}
 	public int pwdsame() {
 		int result = 0;
 		if(pwd2.equals(pwdchk2)) {
-			System.out.println("가능");
 			result =0;
 		}else {
-			System.out.println("불가");
 			result =1;
 		}
 		return result;
 	}
-	
+
 }

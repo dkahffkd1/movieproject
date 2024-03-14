@@ -9,6 +9,8 @@ public interface LoginService {
 	public void registerFunc(Parent root);
 	public void idfindFunc(Parent root);
 	public void pwdfindFunc(Parent root);
-	public void btnFind(Parent root);
-	public void btnPwd(Parent root);
+	public void btnFind(String idf);
+	public void btnPwd(String pwd);
+	public String idid();
+	public String btnfind();
 }
